@@ -1,4 +1,4 @@
-app = "SHE-SPORTS"
+app = "solitary-sound-6587"
 primary_region = "syd"
 console_command = "/code/manage.py shell"
 kill_signal = "SIGINT"

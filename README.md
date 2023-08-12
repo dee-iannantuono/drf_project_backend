@@ -19,19 +19,29 @@ The website aims to empower women between the ages of 10 and 35 by offering dive
 | HTTP Method | Url | Purpose | Request Body | Successful Response Code | Authentication <br /> Authorization
 | --- | ------- | ------ | ---- | -----| ----|
 | GET | projects/ | Return all projects | N/A | 200 | N/A |
-| POST | projects/ | Create a new project | project object | 201 | User must be logged in. |
+| POST | projects/ | Add new project | project object | 201 | User must be logged in. |
+| POST | api-token-auth/ | Get auth token | N/A | 200 | N/A |
+| GET | projects/1/ | Returns a specific project | project object | 200 | N/A |
+| PUT | projects/1/ | Update a project | project object | 200 | User must be logged in |
+| GET | pledges/ | Get all pledges | pledges object | 200 | N/A |
+| POST | pledges/ | Add new pledge | pledges object | 201 | User must be logged in |
+| PUT | pledges/1/ | Update a pledge | pledges object | 200 | User must be logged in |
+| GET | https://solitary-glitter-2281.fly.dev/users/ | Get all users | users app | 200 | N/A|
+| POST | https://solitary-glitter-2281.fly.dev/users/ | Create a new user | users app | 200 | N/A|
+| GET | pledges/1/ | Returns a specific pledge | pledge object | 200 | N/A|
+| GET | UPDATE ON SUNDAY | Returns a specific user | user app | UPDATE ON SUNDAY | N/A|
 
 ## Database Schema
-![Database Schema](crowdfunding/imgs/database_schema.png)
+![Database Schema](readme_imgs/database_schema.png)
 
 ## Wireframes
-![Wireframe](crowdfunding/imgs/wireframe_1.png)
+![Wireframe](readme_imgs/wireframe_1.png)
 
 ## Colour Scheme
 Blue - CMYK 100/96/22/12<br>
 Cream - CMYK 2/6/20/0
 
-![Colour Scheme](crowdfunding/imgs/drf_colour.png)
+![Colour Scheme](readme_imgs/drf_colour.png)
 
 ## Fonts
 Heading - Lionel Classic<br>
