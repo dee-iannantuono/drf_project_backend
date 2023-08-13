@@ -6,6 +6,7 @@ class Project(models.Model):
     description = models.TextField()
     goal = models.IntegerField()
     image = models.URLField()
+    sport = models.TextField(default='no_sport_selected')
     is_open = models.BooleanField()
     date_created = models.DateTimeField()
     owner = models.ForeignKey(

@@ -48,17 +48,28 @@ Heading - Lionel Classic<br>
 Body - Helvetica
 
 ## Submission Documentation
-{{ Fill this section out for submission }}
 
 Deployed Project: [Deployed website](https://solitary-sound-6587.fly.dev/)
 
 ### How To Run
-{{ What steps to take to run this code }}
+
+To run this code, please follow the following steps:
+
+- Clone the repo from Github onto your local machine.
+- Use the terminal to navigate to the folder which contains the project.
+- Run the following command to create a virtual environment 'python -m venv venv'
+- Run git init
+- Run code .
+- Create 2 new files in VS Code - one called requirements.txt and one called .gitignore
+- Add the following code to the requirements.txt file: requirements.txt Django==4.2.2
+- Copy this https://github.com/github/gitignore/blob/main/Python.gitignore into the .gitignore file.
+- Go to the folder which has your requirements.txt in it and run  . venv/Scripts/activate which activates your virtual environment.
+- Go to the folder that has the manage.py file in it and then run python manage.py runserver
 
 ### Updated Database Schema
-{{ Updated schema }}
 
-![image info goes here](./docs/image.png)
+I took out bio and fav_sport in the user section as I didn't have time. This will ideally be added in later on. I did add 'sport' in as an option for the project, however have been so far unable to figure out how to update this in Insomnia. 
+![Alt text](readme_imgs/database_schema_updated.jpg)
 
 ### Updated Wireframes
 The wireframes is the same as the origninal draft posted earlier in this readme.  
