@@ -22,14 +22,14 @@ The website aims to empower women between the ages of 10 and 35 by offering dive
 | POST | projects/ | Add new project | project object | 201 | User must be logged in. |
 | POST | api-token-auth/ | Get auth token | N/A | 200 | N/A |
 | GET | projects/1/ | Returns a specific project | project object | 200 | N/A |
-| PUT | projects/1/ | Update a project | project object | 200 | User must be logged in |
+| PUT | projects/ < project id >/ | Update a project | project object | 200 | User must be logged in |
 | GET | pledges/ | Get all pledges | pledges object | 200 | N/A |
 | POST | pledges/ | Add new pledge | pledges object | 201 | User must be logged in |
-| PUT | pledges/1/ | Update a pledge | pledges object | 200 | User must be logged in |
-| GET | https://solitary-glitter-2281.fly.dev/users/ | Get all users | users app | 200 | N/A|
-| POST | https://solitary-glitter-2281.fly.dev/users/ | Create a new user | users app | 200 | N/A|
+| PUT | pledges/ < pledge id >/ | Update a pledge | pledges object | 200 | User must be logged in |
+| GET | users/ | Get all users | users app | 200 | N/A|
+| POST | users/ | Create a new user | users app | 200 | N/A|
 | GET | pledges/1/ | Returns a specific pledge | pledge object | 200 | N/A|
-| GET | UPDATE ON SUNDAY | Returns a specific user | user app | UPDATE ON SUNDAY | N/A|
+| GET | users/< user id >/ | Returns a specific user | user app | 200 | N/A|
 
 ## Database Schema
 ![Database Schema](readme_imgs/database_schema.png)
@@ -50,7 +50,7 @@ Body - Helvetica
 ## Submission Documentation
 {{ Fill this section out for submission }}
 
-Deployed Project: [Deployed website](http://linkhere.com/)
+Deployed Project: [Deployed website](https://solitary-sound-6587.fly.dev/)
 
 ### How To Run
 {{ What steps to take to run this code }}
@@ -61,19 +61,57 @@ Deployed Project: [Deployed website](http://linkhere.com/)
 ![image info goes here](./docs/image.png)
 
 ### Updated Wireframes
-{{  Updated wireframes }}
-
-![image info goes here](./docs/image.png)
+The wireframes is the same as the origninal draft posted earlier in this readme.  
 
 ### How To Register a New User
-{{ Step by step instructions for how to register a new user and create a new project (i.e. endpoints and body data). }}
+1. In Insomnia, create a new HTTP POST request
+2. Enter the following endpoint - https://solitary-sound-6587.fly.dev/users/
+3. Use the following JSON template - 
+
+	    {"username":"Enter your username",
+	    "password":"Enter your password",
+	    "email":"Enter your email address",
+	    "first_name": "Enter your first name",
+	    "last_name": "Enter your last name"}
+
+4. Click send. A successful request will show 200 and a new user will be created.
+
+### How To Create a New Project
+1. In Insomnia, creat e new HTTP POST request. 
+2. Enter the following endpoint - https://solitary-sound-6587.fly.dev/projects/
+3. Use the following JSON template. 
+
+        {"title":"Enter project title",
+         "description":"Enter project description.",
+         "goal": Enter project goal,
+         "image":"Enter image URL",
+         "is_open":true,
+         "date_created":"2020-03-20T14:28:23.382748Z",
+         "owner":"Real Creator"}
+
+4. In the auth drop down, select 'Bearer' and ensure you enter your auth token. To create an auth token, you can make a POST request to https://solitary-sound-6587.fly.dev/api-token-auth/ and enter in your username as the JSON, like so: 
+
+	    {"username":"Enter username",
+	    "password":"Enter password",
+	    "email":"Enter email"}
+
+5. Click send and a successful request will show a 201 request. 
+
 
 ### Screenshots
-* [] A screenshot of Insomnia, demonstrating a successful GET method for any endpoint.
-![image info goes here](./docs/image.png)
+*  A screenshot of Insomnia, demonstrating a successful GET method for any endpoint.
 
-* [] A screenshot of Insomnia, demonstrating a successful POST method for any endpoint.
-![image info goes here](./docs/image.png)
+![Get all pledges](readme_imgs/get_allpledges.png)
+![Get all projects](readme_imgs/get_allprojects.png)
+![Get all users](readme_imgs/get_allusers.png)
+![Get specific pledge](readme_imgs/get_specificpledge.png)
+![Get specific project](readme_imgs/get_specificproject.png)
+![Get specific user](readme_imgs/get_specificuser.png)
 
-* [] A screenshot of Insomnia, demonstrating a token being returned.
-![image info goes here](./docs/image.png)
+* A screenshot of Insomnia, demonstrating a successful POST method for any endpoint.
+![Post new pledge](readme_imgs/post_newpledge.png)
+![Post new project](readme_imgs/post_newproject.png)
+![Post new user](readme_imgs/post_newuser.png)
+
+* A screenshot of Insomnia, demonstrating a token being returned.
+![Post auth token](readme_imgs/post_getauthtoken.png)
