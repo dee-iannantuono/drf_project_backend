@@ -34,6 +34,19 @@ class ProjectDetail(APIView):
         IsOwnerOrReadOnly
     ]
 
+    # def delete(self, request, pk):
+    #     project = self.get_object(pk)
+    #     project.delete()
+    #     return Response(status=status.HTTP_200_OK)
+
+    def delete(self, request, pk, format=None):
+        try:
+            project = self.get_object(pk)
+            self.check_object_permissions(self.request, project)
+            project.delete()
+        except Project.DoesNotExist:
+            raise Http404
+
     def get_object(self, pk):
         try:
             project = Project.objects.get(pk=pk)
