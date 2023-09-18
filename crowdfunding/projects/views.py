@@ -39,7 +39,6 @@ class ProjectDetail(APIView):
             project = self.get_object(pk)
             self.check_object_permissions(self.request, project)
             project.delete()
-            return Response(status=status.HTTP_200_OK)
         except Project.DoesNotExist:
             raise Http404
 
@@ -100,6 +99,14 @@ class PledgeDetail(APIView):
         permissions.IsAuthenticatedOrReadOnly,
         IsSupporterOrReadOnly
     ]
+
+    def delete(self, request, pk, format=None):
+        try:
+            pledge= self.get_object(pk)
+            self.check_object_permissions(self.request, pledge)
+            pledge.delete()
+        except pledge.DoesNotExist:
+            raise Http404
 
     def get_object(self, pk):
         try:
