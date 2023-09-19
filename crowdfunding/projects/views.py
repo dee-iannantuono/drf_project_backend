@@ -35,12 +35,13 @@ class ProjectDetail(APIView):
     ]
 
     def delete(self, request, pk, format=None):
-        try:
+        # try:
             project = self.get_object(pk)
-            self.check_object_permissions(self.request, project)
+            # self.check_object_permissions(self.request, project)
             project.delete()
-        except Project.DoesNotExist:
-            raise Http404
+            return Response(status=status.HTTP_200_OK)
+        # except Project.DoesNotExist:
+        #     raise Http404
 
     def get_object(self, pk):
         try:
