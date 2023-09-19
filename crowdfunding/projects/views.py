@@ -100,7 +100,7 @@ class PledgeDetail(APIView):
         IsSupporterOrReadOnly
     ]
 
-    def delete(self, request, pk, format=None):
+    def delete(self, request, pk):
         try:
             pledge= self.get_object(pk)
             self.check_object_permissions(self.request, pledge)
